@@ -55,7 +55,7 @@ async (req, res) => {
     const newBook = new Book({
       name: name || originalname,
       pages: totalPages,
-   
+  
       stories: stories,
     });
 
@@ -81,14 +81,14 @@ async (req, res) => {
 
 app.get("/story",async(req,res)=>{
     try{
-const Story=await Book.find();
-if(!Story){
+const Stories=await Book.find();
+if(!Stories){
   res.status(200).json({message:"Books are not found please upload a book "})  
 }
-res.status(200).json({Story})
+res.status(200).json({Stories})
     }
     catch(error){
-        res.status(500).json({message:'Not found'})
+         res.status(500).json({message:error.message})
     }
 } );
 app.get("/story/:_id",async(req,res)=>{
@@ -110,5 +110,6 @@ res.status(200).json({Story})
 app.listen(8080, () => {
   console.log("App is listening on port 5050");
 });
+
 
 
