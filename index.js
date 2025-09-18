@@ -79,7 +79,7 @@ async (req, res) => {
 
 );
 
-app.get("story/",async(req,res)=>{
+app.get("/story",async(req,res)=>{
     try{
 const Story=await Book.find();
 if(!Story){
@@ -110,3 +110,4 @@ res.status(200).json({Story})
 app.listen(8080, () => {
   console.log("App is listening on port 5050");
 });
+
