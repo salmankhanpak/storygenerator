@@ -22,7 +22,7 @@ app.get("/test", (req, res) => {
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 // for upload route 
-app.post("story/upload", upload.single("file"),
+app.post("/story/upload", upload.single("file"),
 async (req, res) => {
   try {
     const { originalname, buffer } = req.file;
@@ -110,4 +110,5 @@ res.status(200).json({Story})
 app.listen(8080, () => {
   console.log("App is listening on port 5050");
 });
+
 
