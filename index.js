@@ -108,8 +108,9 @@ res.status(200).json({Story})
 
 
 app.listen(8080, () => {
-  console.log("App is listening on port 5050");
+  console.log("App is listening on port 8080");
 });
+
 
 
 
